@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </span></td>
             <td class="transaction-amount">$${t.amount.toLocaleString()}</td>
             <td>${t.description || '-'}</td>
-            <td class="transaction-date">${t.date}</td>
+            <td class="transaction-date">${t.date ? new Date(t.date).toLocaleString() : '-'}</td>
             <td>$${t.balance.toLocaleString()}</td>
         `;
         historyContainer.appendChild(row);
