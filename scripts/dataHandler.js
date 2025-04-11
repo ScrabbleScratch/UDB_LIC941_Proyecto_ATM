@@ -59,4 +59,42 @@ class DataHandler {
             return false;
         }
     }
+
+    static withdraw(amount, description) {
+        try {
+            const user = this.getCurrentUser();
+            if (!user) return false;
+            
+            // Validar saldo suficiente
+            if (user.balance < amount) {
+                return false;
+            }
+            
+            // Actualizar saldo
+            user.balance -= amount;
+            
+            // Crear transacción
+            const transaction = {
+                type: 'withdrawal',
+                amount: amount,
+                date: new Date().toISOString(),
+                description: description,
+                balance: user.balance
+            };
+            
+            // Agregar al historial
+            if (!user.transactions) {
+                user.transactions = [];
+            }
+            user.transactions.push(transaction);
+            
+            // Actualizar usuario en sesión
+            this.setCurrentUser(user);
+            return true;
+            
+        } catch (error) {
+            console.error('Error en retiro:', error);
+            return false;
+        }
+    }
 }

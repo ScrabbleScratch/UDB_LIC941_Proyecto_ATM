@@ -22,13 +22,15 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'index.html';
     });
 
-    // Placeholder para futuras funcionalidades
     document.getElementById('depositBtn').addEventListener('click', () => {
         window.location.href = 'deposit.html';
     });
+    
     document.getElementById('withdrawBtn').addEventListener('click', () => {
-        alert('Funcionalidad de retiro en desarrollo');
+        window.location.href = 'withdraw.html';
     });
+
+    // Placeholder para futuras funcionalidades
     document.getElementById('payServicesBtn').addEventListener('click', () => {
         alert('Funcionalidad de pago de servicios en desarrollo');
     });
