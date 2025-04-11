@@ -1,0 +1,38 @@
+flowchart TD
+    subgraph Autenticación
+        A[Login] --> B{Validar credenciales}
+        B -->|Éxito| C[Dashboard]
+        B -->|Fallo| D[Mostrar error]
+    end
+
+    subgraph Dashboard
+        C --> E[Menú Principal]
+        E --> F[Depósito]
+        E --> G[Retiro]
+        E --> H[Historial]
+        E --> I[Pago Servicios]
+        E --> J[Consulta Saldo]
+    end
+
+    subgraph Operaciones
+        F --> K{Validar monto}
+        G --> K
+        I --> K
+        K -->|Válido| L[Procesar transacción]
+        K -->|Inválido| M[Mostrar error]
+        L --> N[Actualizar balance]
+    end
+
+    subgraph Consultas
+        H --> O{Existen transacciones?}
+        O -->|Sí| P[Mostrar datos]
+        O -->|No| Q[Mostrar mensaje vacío]
+        J --> R[Mostrar balance actual]
+    end
+
+    subgraph Navegación
+        C --> S[Cerrar Sesión]
+        S --> A
+        F --> T[Cancelar]
+        T --> C
+    end
