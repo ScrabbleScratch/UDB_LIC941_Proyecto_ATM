@@ -12,23 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
         <p><i class="bi bi-wallet2"></i> Saldo actual: $${user.balance.toLocaleString()}</p>
     `;
 
-    // Mostrar transacciones
-    const transactionsList = document.getElementById('transactionsList');
-    user.transactions.slice().reverse().forEach(t => {
-        const transactionEl = document.createElement('div');
-        transactionEl.className = 'transaction';
-        transactionEl.innerHTML = `
-            <span class="transaction-type ${t.type === 'withdrawal' ? 'withdrawal' : ''}">
-                ${t.type === 'deposit' ? 'Depósito' : 'Retiro'}
-            </span>
-            <span class="transaction-amount">$${t.amount.toLocaleString()}</span>
-            <span>${t.date}</span>
-            <span>Saldo: $${t.balance.toLocaleString()}</span>
-        `;
-        transactionsList.appendChild(transactionEl);
+    // Manejar botones de acción
+    document.getElementById('historyBtn').addEventListener('click', () => {
+        window.location.href = 'history.html';
     });
 
-    // Manejar botones de acción
     document.getElementById('logoutBtn').addEventListener('click', () => {
         DataHandler.clearSession();
         window.location.href = 'index.html';
@@ -41,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('withdrawBtn').addEventListener('click', () => {
         alert('Funcionalidad de retiro en desarrollo');
     });
-            document.getElementById('payServicesBtn').addEventListener('click', () => {
-                alert('Funcionalidad de pago de servicios en desarrollo');
-            });
+    document.getElementById('payServicesBtn').addEventListener('click', () => {
+        alert('Funcionalidad de pago de servicios en desarrollo');
+    });
 });
