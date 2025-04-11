@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (e.key === 'Backspace') {
             pin = pin.slice(0, -1);
             updatePinDisplay();
+        } else if (e.key === 'Enter' && pin.length === MAX_PIN_LENGTH) {
+            enterBtn.click(); // Disparar el evento click del botón Enter
         }
     });
     

@@ -1,0 +1,49 @@
+@import 'common.css';
+
+/* Estilos específicos para login */
+.pin-display {
+    font-size: 2rem;
+    letter-spacing: 0.5rem;
+    text-align: center;
+    margin: 2rem 0;
+    font-family: monospace;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.control-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.atm-container {
+    max-width: 400px;
+}
+
+/* Estilos adicionales de login.css */
+.login-form {
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.login-title {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.login-input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
