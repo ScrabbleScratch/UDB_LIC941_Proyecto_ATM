@@ -1,0 +1,78 @@
+.deposit-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.deposit-form {
+    margin-top: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.8rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 0.95rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid #e0e3e7;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-control:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52,152,219,0.1);
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.input-group-text {
+    padding: 0.85rem 1rem;
+    background-color: #f1f5f9;
+    border: 1px solid #e0e3e7;
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+button[type="submit"]:active {
+    transform: scale(0.98);
+}

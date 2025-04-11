@@ -1,0 +1,27 @@
+@import 'common.css';
+
+/* Estilos específicos para login */
+.pin-display {
+    font-size: 2rem;
+    letter-spacing: 0.5rem;
+    text-align: center;
+    margin: 2rem 0;
+    font-family: monospace;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.control-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.atm-container {
+    max-width: 400px;
+}

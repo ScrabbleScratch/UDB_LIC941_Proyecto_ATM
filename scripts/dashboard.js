@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Placeholder para futuras funcionalidades
     document.getElementById('depositBtn').addEventListener('click', () => {
-        alert('Funcionalidad de depósito en desarrollo');
+        window.location.href = 'deposit.html';
     });
     document.getElementById('withdrawBtn').addEventListener('click', () => {
         alert('Funcionalidad de retiro en desarrollo');
