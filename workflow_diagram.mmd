@@ -1,0 +1,17 @@
+flowchart TD
+    A([Inicio]) --> B{Usuario logueado?}
+    B -->|No| C[Redirigir a index.html]
+    B -->|Sí| D[Cargar historial del usuario]
+    D --> E{Hay transacciones?}
+    E -->|Sí| F[Mostrar tabla de transacciones]
+    F --> G[Mostrar gráfico circular]
+    G --> H[Mostrar botón Generar PDF]
+    E -->|No| I[Mostrar mensaje 'No hay transacciones']
+    I --> J[Ocultar botón Generar PDF]
+    H --> K[Al hacer click]
+    K --> L[Capturar gráfico con html2canvas]
+    L --> M[Capturar tabla con html2canvas]
+    M --> N[Generar PDF con jsPDF]
+    N --> O[Descargar PDF]
+    A --> P[Mostrar botón Volver]
+    P --> Q[Redirigir a dashboard.html]
