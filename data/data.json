@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "pin": 1111,
-    "accountNumber": 123456789,
+    "pin": "1010",
+    "accountNumber": "123456789",
     "firstName": "Carlos",
     "lastName": "Sánchez",
     "balance": 1500,
@@ -10,8 +10,8 @@
   },
   {
     "id": 2,
-    "pin": 1234,
-    "accountNumber": 987654321,
+    "pin": "1234",
+    "accountNumber": "987654321",
     "firstName": "Juan",
     "lastName": "Pérez",
     "balance": 965,
@@ -23,8 +23,8 @@
   },
   {
     "id": 3,
-    "pin": 5678,
-    "accountNumber": 246813579,
+    "pin": "5678",
+    "accountNumber": "246813579",
     "firstName": "Laura",
     "lastName": "Gómez",
     "balance": 1425,
