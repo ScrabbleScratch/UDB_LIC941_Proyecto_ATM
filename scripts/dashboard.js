@@ -5,11 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // Mostrar información del usuario
+    // Mostrar información del usuario (sin saldo)
     document.getElementById('userInfo').innerHTML = `
         <h2><i class="bi bi-person-circle"></i> ${user.firstName} ${user.lastName}</h2>
         <p><i class="bi bi-credit-card"></i> Número de cuenta: ${user.accountNumber}</p>
-        <p><i class="bi bi-wallet2"></i> Saldo actual: $${user.balance.toLocaleString()}</p>
     `;
 
     // Manejar botones de acción
@@ -32,5 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('payServicesBtn').addEventListener('click', () => {
         window.location.href = 'pay-services.html';
+    });
+
+    document.getElementById('balanceBtn').addEventListener('click', () => {
+        window.location.href = 'balance.html';
     });
 });

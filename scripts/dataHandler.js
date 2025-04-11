@@ -121,4 +121,14 @@ class DataHandler {
             return false;
         }
     }
+
+    static getBalance() {
+        try {
+            const user = this.getCurrentUser();
+            return user ? user.balance : 0;
+        } catch (error) {
+            console.error('Error obteniendo balance:', error);
+            return 0;
+        }
+    }
 }
