@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ${t.type === 'deposit' ? 'Depósito' : 'Retiro'}
             </span></td>
             <td class="transaction-amount">$${t.amount.toLocaleString()}</td>
+            <td>${t.description || '-'}</td>
             <td class="transaction-date">${t.date}</td>
             <td>$${t.balance.toLocaleString()}</td>
         `;

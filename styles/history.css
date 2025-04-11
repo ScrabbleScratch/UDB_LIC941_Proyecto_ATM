@@ -23,6 +23,18 @@
     text-align: left;
 }
 
+.transactions-table td:nth-child(4) { /* Ajustado para la nueva posición de descripción */
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #555;
+}
+
+.transactions-table td:nth-child(3) { /* Estilo para la columna de fecha */
+    white-space: nowrap;
+}
+
 .transactions-table td {
     padding: 12px 15px;
     border-bottom: 1px solid #e9ecef;
