@@ -13,24 +13,33 @@ document.addEventListener('DOMContentLoaded', () => {
         minute: '2-digit'
     };
 
-    // Mostrar historial completo
     const historyContainer = document.getElementById('transactionsHistory');
-    user.transactions.forEach(t => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td><span class="transaction-type ${t.type}">
-                ${t.type === 'deposit' ? 'Depósito' : t.type === 'payment' ? 'Pago' : 'Retiro'}
-            </span></td>
-            <td class="transaction-amount">$${t.amount.toLocaleString()}</td>
-            <td>${t.description || '-'}</td>
-            <td class="transaction-date">${t.date ? new Date(t.date).toLocaleString('es-ES', options) : '-'}</td>
-            <td>$${t.balance.toLocaleString()}</td>
-        `;
-        historyContainer.appendChild(row);
-    });
-
-    // Generar gráfica de transacciones
+    const emptyMessage = document.getElementById('emptyHistoryMessage');
+    const generatePdfBtn = document.getElementById('generatePdfBtn');
+    const chartContainer = document.querySelector('.chart-container');
+    
     if (user.transactions && user.transactions.length > 0) {
+        // Mostrar historial completo
+        emptyMessage.style.display = 'none';
+        document.querySelector('.transactions-table').style.display = '';
+        chartContainer.style.display = '';
+        generatePdfBtn.style.display = '';
+        
+        user.transactions.forEach(t => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td><span class="transaction-type ${t.type}">
+                    ${t.type === 'deposit' ? 'Depósito' : t.type === 'payment' ? 'Pago' : 'Retiro'}
+                </span></td>
+                <td class="transaction-amount">$${t.amount.toLocaleString()}</td>
+                <td>${t.description || '-'}</td>
+                <td class="transaction-date">${t.date ? new Date(t.date).toLocaleString('es-ES', options) : '-'}</td>
+                <td>$${t.balance.toLocaleString()}</td>
+            `;
+            historyContainer.appendChild(row);
+        });
+
+        // Generar gráfica de transacciones
         const transactionTypes = ['deposit', 'withdrawal', 'payment'];
         const counts = transactionTypes.map(type => 
             user.transactions.filter(t => t.type === type).length
@@ -69,6 +78,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         });
+    } else {
+        // Mostrar mensaje de historial vacío
+        emptyMessage.style.display = 'block';
+        document.querySelector('.transactions-table').style.display = 'none';
+        chartContainer.style.display = 'none';
+        generatePdfBtn.style.display = 'none';
     }
 
     // Botón Volver
