@@ -110,6 +110,11 @@ button[type="submit"]:active {
     font-size: 1.2rem;
 }
 
+.deposit-form #amount {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
