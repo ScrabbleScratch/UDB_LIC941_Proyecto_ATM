@@ -42,9 +42,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     // Funcionalidad del botón Enter
-    enterBtn.addEventListener('click', () => {
+    enterBtn.addEventListener('click', async () => {
         if (pin.length === MAX_PIN_LENGTH) {
-            alert(`PIN ingresado: ${pin}`);
+            const user = await DataHandler.validatePin(pin);
+            if (user) {
+                DataHandler.setCurrentUser(user);
+                window.location.href = 'dashboard.html';
+            } else {
+                alert('PIN incorrecto. Intente nuevamente.');
+                pin = '';
+                updatePinDisplay();
+            }
         } else {
             alert('Por favor ingrese un PIN de 4 dígitos');
         }
