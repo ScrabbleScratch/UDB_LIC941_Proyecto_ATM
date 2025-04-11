@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td><span class="transaction-type ${t.type}">
-                ${t.type === 'deposit' ? 'Depósito' : 'Retiro'}
+                ${t.type === 'deposit' ? 'Depósito' : t.type === 'payment' ? 'Pago' : 'Retiro'}
             </span></td>
             <td class="transaction-amount">$${t.amount.toLocaleString()}</td>
             <td>${t.description || '-'}</td>

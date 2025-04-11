@@ -30,8 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'withdraw.html';
     });
 
-    // Placeholder para futuras funcionalidades
     document.getElementById('payServicesBtn').addEventListener('click', () => {
-        alert('Funcionalidad de pago de servicios en desarrollo');
+        window.location.href = 'pay-services.html';
     });
 });

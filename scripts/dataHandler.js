@@ -32,10 +32,8 @@ class DataHandler {
             const user = this.getCurrentUser();
             if (!user) return false;
             
-            // Actualizar saldo
             user.balance += amount;
             
-            // Crear transacción
             const transaction = {
                 type: 'deposit',
                 amount: amount,
@@ -44,13 +42,11 @@ class DataHandler {
                 balance: user.balance
             };
             
-            // Agregar al historial
             if (!user.transactions) {
                 user.transactions = [];
             }
             user.transactions.push(transaction);
             
-            // Actualizar usuario en sesión
             this.setCurrentUser(user);
             return true;
             
@@ -65,15 +61,12 @@ class DataHandler {
             const user = this.getCurrentUser();
             if (!user) return false;
             
-            // Validar saldo suficiente
             if (user.balance < amount) {
                 return false;
             }
             
-            // Actualizar saldo
             user.balance -= amount;
             
-            // Crear transacción
             const transaction = {
                 type: 'withdrawal',
                 amount: amount,
@@ -82,18 +75,49 @@ class DataHandler {
                 balance: user.balance
             };
             
-            // Agregar al historial
             if (!user.transactions) {
                 user.transactions = [];
             }
             user.transactions.push(transaction);
             
-            // Actualizar usuario en sesión
             this.setCurrentUser(user);
             return true;
             
         } catch (error) {
             console.error('Error en retiro:', error);
+            return false;
+        }
+    }
+
+    static paymentService(amount, description) {
+        try {
+            const user = this.getCurrentUser();
+            if (!user) return false;
+            
+            if (user.balance < amount) {
+                return false;
+            }
+            
+            user.balance -= amount;
+            
+            const transaction = {
+                type: 'payment',
+                amount: amount,
+                date: new Date().toISOString(),
+                description: description,
+                balance: user.balance
+            };
+            
+            if (!user.transactions) {
+                user.transactions = [];
+            }
+            user.transactions.push(transaction);
+            
+            this.setCurrentUser(user);
+            return true;
+            
+        } catch (error) {
+            console.error('Error en pago de servicio:', error);
             return false;
         }
     }
