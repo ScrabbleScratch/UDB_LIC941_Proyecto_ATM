@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "pin": 1234,
+    "accountNumber": 123456789,
+    "firstName": "Juan",
+    "lastName": "Pérez",
+    "balance": 1500,
+    "transactions": [
+      { "type": "deposit", "amount": 1000, "balance": 1000, "date": "2025-04-01" },
+      { "type": "withdrawal", "amount": 500, "balance": 500, "date": "2025-04-03" }
+    ]
+  },
+  {
+    "id": 2,
+    "pin": 5678,
+    "accountNumber": 987654321,
+    "firstName": "Laura",
+    "lastName": "Gómez",
+    "balance": 2500,
+    "transactions": [
+      { "type": "deposit", "amount": 2500, "balance": 2500, "date": "2025-04-02" }
+    ]
+  }
+]
