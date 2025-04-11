@@ -51,12 +51,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 DataHandler.setCurrentUser(user);
                 window.location.href = 'dashboard.html';
             } else {
-                alert('PIN incorrecto. Intente nuevamente.');
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'PIN incorrecto. Intente nuevamente.',
+                    confirmButtonColor: '#6f42c1'
+                });
                 pin = '';
                 updatePinDisplay();
             }
         } else {
-            alert('Por favor ingrese un PIN de 4 dígitos');
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Por favor ingrese un PIN de 4 dígitos',
+                confirmButtonColor: '#6f42c1'
+            });
         }
     });
     

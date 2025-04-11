@@ -17,7 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const description = formData.get('description') || 'Depósito';
 
         if (!amount || amount <= 0) {
-            alert('Por favor ingrese una cantidad válida');
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Por favor ingrese una cantidad válida',
+                confirmButtonColor: '#6f42c1'
+            });
             return;
         }
 
@@ -43,7 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 </button>
             `;
         } else {
-            alert('Error al realizar el depósito');
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Error al realizar el depósito',
+                confirmButtonColor: '#6f42c1'
+            });
         }
     });
 });

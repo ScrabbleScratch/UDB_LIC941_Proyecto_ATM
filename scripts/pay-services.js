@@ -17,12 +17,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const amount = parseFloat(formData.get('amount'));
 
         if (!amount || amount <= 0) {
-            alert('Por favor ingrese un monto válido');
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Por favor ingrese un monto válido',
+                confirmButtonColor: '#6f42c1'
+            });
             return;
         }
 
         if (!service) {
-            alert('Por favor seleccione un servicio');
+            Swal.fire({
+                icon: 'error',
+                title: 'Error', 
+                text: 'Por favor seleccione un servicio',
+                confirmButtonColor: '#6f42c1'
+            });
             return;
         }
 
@@ -56,7 +66,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 </button>
             `;
         } else {
-            alert('Error al realizar el pago. Verifique su saldo disponible.');
+            Swal.fire({
+                icon: 'error',
+                title: 'Error en pago',
+                text: 'Error al realizar el pago. Verifique su saldo disponible.',
+                confirmButtonColor: '#6f42c1'
+            });
         }
     });
 });
