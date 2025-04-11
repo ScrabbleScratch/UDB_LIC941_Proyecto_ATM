@@ -23,12 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key >= '0' && e.key <= '9' && pin.length < MAX_PIN_LENGTH) {
             pin += e.key;
             updatePinDisplay();
+        } else if (e.key === 'Backspace') {
+            pin = pin.slice(0, -1);
+            updatePinDisplay();
         }
     });
     
-    // Funcionalidad del botón Limpiar
+    // Funcionalidad del botón Borrar
     clearBtn.addEventListener('click', () => {
-        pin = '';
+        pin = pin.slice(0, -1);
         updatePinDisplay();
     });
     
