@@ -5,6 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
+    const options = { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+    };
+
     // Mostrar historial completo
     const historyContainer = document.getElementById('transactionsHistory');
     user.transactions.forEach(t => {
@@ -15,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </span></td>
             <td class="transaction-amount">$${t.amount.toLocaleString()}</td>
             <td>${t.description || '-'}</td>
-            <td class="transaction-date">${t.date ? new Date(t.date).toLocaleString() : '-'}</td>
+            <td class="transaction-date">${t.date ? new Date(t.date).toLocaleString('es-ES', options) : '-'}</td>
             <td>$${t.balance.toLocaleString()}</td>
         `;
         historyContainer.appendChild(row);

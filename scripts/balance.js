@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mostrar balance actual
     const balance = DataHandler.getBalance();
-    document.getElementById('currentBalance').textContent = `$${balance.toFixed(2)}`;
+    document.getElementById('currentBalance').textContent = `$${balance.toLocaleString()}`;
     
     // Mostrar fecha actual
     const options = { 

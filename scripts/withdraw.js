@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <i class="bi bi-check-circle-fill" style="font-size: 2.5rem; color: #dc3545;"></i>
                 <h3 style="margin-bottom: 0.5rem;">¡Retiro exitoso!</h3>
                 <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                    <strong>$${amount.toFixed(2)}</strong> retirados correctamente
+                    <strong>$${amount.toLocaleString()}</strong> retirados correctamente
                 </p>
                 ${description ? '<p class="text-muted"><strong>Concepto:</strong> ' + description + '</p>' : ''}
                 <button onclick="window.location.href='dashboard.html'" class="btn btn-enter" style="margin-top: 1.5rem; width: auto; padding: 0.75rem 1.5rem; background-color: #dc3545;">
