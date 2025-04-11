@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Bank ATM</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="container atm-container">
+        <div class="bank-header">
+            <h1><i class="bi bi-coin"></i> Pokémon Bank</h1>
+        </div>
+        
+        <div class="pin-display" id="pinDisplay">____</div>
+        
+        <div class="keypad">
+            <button class="btn btn-dark" data-number="1">1</button>
+            <button class="btn btn-dark" data-number="2">2</button>
+            <button class="btn btn-dark" data-number="3">3</button>
+            <button class="btn btn-dark" data-number="4">4</button>
+            <button class="btn btn-dark" data-number="5">5</button>
+            <button class="btn btn-dark" data-number="6">6</button>
+            <button class="btn btn-dark" data-number="7">7</button>
+            <button class="btn btn-dark" data-number="8">8</button>
+            <button class="btn btn-dark" data-number="9">9</button>
+            <button class="btn btn-dark" data-number="0">0</button>
+        </div>
+        
+        <div class="control-buttons">
+            <button class="btn btn-cancel" id="cancelBtn">Cancelar</button>
+            <button class="btn btn-clear" id="clearBtn">Limpiar</button>
+            <button class="btn btn-enter" id="enterBtn">Entrar</button>
+        </div>
+    </div>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
