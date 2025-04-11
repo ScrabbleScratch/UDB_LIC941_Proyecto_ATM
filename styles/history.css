@@ -95,3 +95,15 @@
     width: 100% !important;
     height: auto !important;
 }
+
+.header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+#backBtn, #generatePdfBtn {
+    padding: 8px 16px;
+    margin: 0;
+}
