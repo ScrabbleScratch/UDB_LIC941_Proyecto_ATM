@@ -5,7 +5,7 @@
     "accountNumber": "123456789",
     "firstName": "Carlos",
     "lastName": "Sánchez",
-    "balance": 1500,
+    "balance": 0,
     "transactions": []
   },
   {
