@@ -1,48 +1,33 @@
 /* Estilos modernizados para el dashboard */
 .dashboard-container {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 2rem;
+    width: 95%;
+    margin: 1rem auto;
+    padding: 1.5rem;
     background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.bank-header {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #2c3e50;
-}
-
-.bank-header h1 {
-    font-size: 2.2rem;
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
 }
 
 .account-info {
     background: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 12px;
-    margin-bottom: 2rem;
-    border-left: 4px solid #3498db;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border-left: 3px solid #3498db;
 }
 
 .account-info h2 {
     color: #2c3e50;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
 
 .account-info p {
-    margin: 0.75rem 0;
+    margin: 0.5rem 0;
     color: #34495e;
     display: flex;
     align-items: center;
@@ -50,13 +35,13 @@
 }
 
 #transactionsContainer {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 #transactionsContainer h3 {
     color: #2c3e50;
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -64,25 +49,24 @@
 
 .transaction {
     background: white;
-    padding: 1rem;
-    margin-bottom: 0.75rem;
-    border-radius: 8px;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    flex-direction: column;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
     transition: all 0.2s ease;
 }
 
 .transaction:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .transaction-type {
     font-weight: 600;
     color: #27ae60;
-    flex: 1;
+    margin-bottom: 0.3rem;
 }
 
 .transaction-type.withdrawal {
@@ -91,14 +75,71 @@
 
 .transaction-amount {
     font-weight: 600;
-    margin: 0 1rem;
+    margin: 0.3rem 0;
 }
 
 .account-actions {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    margin-top: 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+    .dashboard-container {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+
+    .account-info {
+        padding: 1.5rem;
+        border-radius: 12px;
+        margin-bottom: 2rem;
+        border-left: 4px solid #3498db;
+    }
+
+    .account-info h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .account-info p {
+        margin: 0.75rem 0;
+    }
+
+    #transactionsContainer {
+        margin-bottom: 2rem;
+    }
+
+    #transactionsContainer h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .transaction {
+        padding: 1rem;
+        margin-bottom: 0.75rem;
+        border-radius: 8px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .transaction-type {
+        margin-bottom: 0;
+        flex: 1;
+    }
+
+    .account-actions {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
 }
 
 .btn {
