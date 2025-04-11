@@ -1,0 +1,8 @@
+flowchart TD
+    A[Página Login] --> B[Input usuario/contraseña]
+    B --> C{Validar campos}
+    C -->|Vacíos| D[Mostrar error]
+    C -->|Completos| E[Autenticar]
+    E --> F{Autenticación exitosa?}
+    F -->|Sí| G[Redirigir a Dashboard]
+    F -->|No| H[Mostrar error credenciales]

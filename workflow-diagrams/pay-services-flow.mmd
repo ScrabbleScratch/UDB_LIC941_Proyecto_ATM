@@ -1,0 +1,17 @@
+flowchart TD
+    A[Página Pagos] --> B[Seleccionar servicio]
+    B --> C[Listar servicios disponibles]
+    C --> D[Seleccionar servicio específico]
+    D --> E[Ingresar monto a pagar]
+    E --> F{Validar monto}
+    F -->|<= 0| G[Mostrar 'Monto inválido']
+    F -->|> 0| H{Validar fondos}
+    H -->|Insuficientes| I[Mostrar 'Fondos insuficientes']
+    H -->|Suficientes| J[Procesar pago]
+    J --> K{Pago exitoso?}
+    K -->|Sí| L[Mostrar 'Pago exitoso']
+    K -->|No| M[Mostrar 'Error en pago']
+    L --> N[Actualizar balance]
+    N --> O[Redirigir a Dashboard]
+    A --> P[Botón Cancelar]
+    P --> Q[Redirigir a Dashboard]

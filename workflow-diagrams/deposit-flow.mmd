@@ -1,0 +1,14 @@
+flowchart TD
+    A[Página Depósito] --> B[Formulario de depósito]
+    B --> C[Input: Monto]
+    C --> D[Input: Descripción opcional]
+    D --> E{Validar datos}
+    E -->|Monto <= 0| F[Mostrar error]
+    E -->|Datos válidos| G[Procesar depósito]
+    G --> H{Depósito exitoso?}
+    H -->|Sí| I[Mostrar confirmación]
+    H -->|No| J[Mostrar error]
+    I --> K[Actualizar balance]
+    K --> L[Redirigir a Dashboard]
+    A --> M[Botón Cancelar]
+    M --> N[Redirigir a Dashboard]

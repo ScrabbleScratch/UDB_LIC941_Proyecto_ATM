@@ -1,0 +1,14 @@
+flowchart TD
+    A[Página Historial] --> B[Cargar transacciones]
+    B --> C{Existen transacciones?}
+    C -->|Sí| D[Generar gráfico circular]
+    D --> E[Mostrar tabla de transacciones]
+    E --> F[Mostrar botón 'Generar PDF']
+    C -->|No| G[Mostrar 'No hay transacciones']
+    G --> H[Ocultar botón PDF]
+    F --> I[Al hacer click]
+    I --> J[Capturar tabla y gráfico]
+    J --> K[Generar documento PDF]
+    K --> L[Descargar automáticamente]
+    A --> M[Botón Volver]
+    M --> N[Redirigir a Dashboard]
