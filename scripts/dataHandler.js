@@ -2,7 +2,7 @@
 class DataHandler {
     static async loadUserData() {
         try {
-            const response = await fetch('https://scrabblescratch.github.io/UDB_LIC941_Ptoyecto_F1/data/data.json');
+            const response = await fetch('https://scrabblescratch.github.io/UDB_LIC941_Proyecto_F1/data/data.json');
             return await response.json();
         } catch (error) {
             console.error('Error cargando datos:', error);
