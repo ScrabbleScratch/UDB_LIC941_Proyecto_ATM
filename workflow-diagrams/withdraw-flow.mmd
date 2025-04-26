@@ -2,7 +2,7 @@ flowchart TD
     A[Página Retiro] --> B[Formulario de retiro]
     B --> C[Input: Monto a retirar]
     C --> D{Validar monto}
-    D -->|>= 0| E[Mostrar 'Monto inválido']
+    D -->|<= 0| E[Mostrar 'Monto inválido']
     D -->|> 0| F{Validar fondos}
     F -->|Insuficientes| G[Mostrar 'Fondos insuficientes']
     F -->|Suficientes| H[Procesar retiro]
