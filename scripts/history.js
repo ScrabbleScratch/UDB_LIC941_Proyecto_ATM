@@ -35,6 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>${t.description || '-'}</td>
                 <td class="transaction-date">${t.date ? new Date(t.date).toLocaleString('es-ES', options) : '-'}</td>
                 <td>$${t.balance.toLocaleString()}</td>
+                <td>
+                    <button class="btn btn-outline-secondary" onclick="PdfUtils.generateTransactionPdf('${t.id}')">
+                        <i class="bi bi-receipt"></i>
+                    </button>
+                </td>
             `;
             historyContainer.appendChild(row);
         });
