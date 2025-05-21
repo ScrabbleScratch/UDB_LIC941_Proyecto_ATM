@@ -26,9 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const success = DataHandler.withdraw(amount, description);
+        const withdrawalId = DataHandler.withdraw(amount, description);
         
-        if (success) {
+        if (withdrawalId) {
             const container = document.querySelector('.withdraw-container');
             container.classList.add('success-state');
             
@@ -43,6 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <strong>$${amount.toLocaleString()}</strong> retirados correctamente
                 </p>
                 ${description ? '<p class="text-muted"><strong>Concepto:</strong> ' + description + '</p>' : ''}
+                <button onclick="PdfUtils.generateTransactionPdf('${withdrawalId}')" class="btn btn-enter" style="margin-top: 1.5rem; width: auto; padding: 0.75rem 1.5rem; background-color: #dc3545;">
+                    <i class="bi bi-receipt"></i> Descargar comprobante
+                </button>
                 <button onclick="window.location.href='dashboard.html'" class="btn btn-enter" style="margin-top: 1.5rem; width: auto; padding: 0.75rem 1.5rem; background-color: #dc3545;">
                     <i class="bi bi-arrow-left"></i> Volver al Dashboard
                 </button>
