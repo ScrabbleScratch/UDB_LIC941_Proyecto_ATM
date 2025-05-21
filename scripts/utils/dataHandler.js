@@ -92,15 +92,16 @@ class DataHandler {
     static paymentService(amount, description) {
         try {
             const user = this.getCurrentUser();
-            if (!user) return false;
+            if (!user) return null;
 
             if (user.balance < amount) {
-                return false;
+                return null;
             }
 
             user.balance -= amount;
 
             const transaction = {
+                id: crypto.randomUUID(),
                 type: 'payment',
                 amount: amount,
                 date: new Date().toISOString(),
@@ -114,10 +115,10 @@ class DataHandler {
             user.transactions.push(transaction);
 
             this.setCurrentUser(user);
-            return true;
+            return transaction.id;
         } catch (error) {
             console.error('Error en pago de servicio:', error);
-            return false;
+            return null;
         }
     }
 

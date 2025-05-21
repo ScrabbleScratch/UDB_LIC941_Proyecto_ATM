@@ -46,9 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <button onclick="PdfUtils.generateTransactionPdf('${depositId}')" class="btn btn-enter" style="margin-top: 1.5rem; width: auto; padding: 0.75rem 1.5rem;">
                     <i class="bi bi-receipt"></i> Descargar comprobante
                 </button>
-                <button onclick="window.location.href=\'dashboard.html\'" class="btn btn-enter" style="margin-top: 1.5rem; width: auto; padding: 0.75rem 1.5rem;">
-                    <i class="bi bi-arrow-left"></i> Volver al Dashboard
-                </button>
             `;
         } else {
             Swal.fire({

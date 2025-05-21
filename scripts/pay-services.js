@@ -44,9 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const description = `Pago de servicio: ${serviceNames[service]}`;
-        const success = DataHandler.paymentService(amount, description);
+        const paymentId = DataHandler.paymentService(amount, description);
         
-        if (success) {
+        if (paymentId) {
             const container = document.querySelector('.pay-services-container');
             container.classList.add('success-state');
             
@@ -61,8 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <strong>$${amount.toLocaleString()}</strong> pagados correctamente
                 </p>
                 <p class="text-muted"><strong>Servicio:</strong> ${serviceNames[service]}</p>
-                <button onclick="window.location.href='dashboard.html'" class="btn btn-enter" style="margin-top: 1.5rem; width: auto; padding: 0.75rem 1.5rem; background-color: #6f42c1;">
-                    <i class="bi bi-arrow-left"></i> Volver al Dashboard
+                <button onclick="PdfUtils.generateTransactionPdf('${paymentId}')" class="btn btn-enter" style="margin-top: 1.5rem; width: auto; padding: 0.75rem 1.5rem; background-color: #6f42c1;">
+                    <i class="bi bi-receipt"></i> Descargar comprobante
                 </button>
             `;
         } else {
