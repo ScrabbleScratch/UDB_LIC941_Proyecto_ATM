@@ -30,62 +30,62 @@ class DataHandler {
     static deposit(amount, description) {
         try {
             const user = this.getCurrentUser();
-            if (!user) return false;
-            
+            if (!user) return null;
+
             user.balance += amount;
-            
+
             const transaction = {
+                id: crypto.randomUUID(),
                 type: 'deposit',
                 amount: amount,
                 date: new Date().toISOString(),
                 description: description,
                 balance: user.balance
             };
-            
+
             if (!user.transactions) {
                 user.transactions = [];
             }
             user.transactions.push(transaction);
-            
+
             this.setCurrentUser(user);
-            return true;
-            
+            return transaction.id;
         } catch (error) {
             console.error('Error en depósito:', error);
-            return false;
+            return null;
         }
     }
 
     static withdraw(amount, description) {
         try {
             const user = this.getCurrentUser();
-            if (!user) return false;
-            
+            if (!user) return null;
+
             if (user.balance < amount) {
-                return false;
+                return null;
             }
-            
+
             user.balance -= amount;
-            
+
             const transaction = {
+                id: crypto.randomUUID(),
                 type: 'withdrawal',
                 amount: amount,
                 date: new Date().toISOString(),
                 description: description,
                 balance: user.balance
             };
-            
+
             if (!user.transactions) {
                 user.transactions = [];
             }
             user.transactions.push(transaction);
-            
+
             this.setCurrentUser(user);
-            return true;
-            
+            return transaction.id;
         } catch (error) {
             console.error('Error en retiro:', error);
-            return false;
+            return null;
         }
     }
 
@@ -93,13 +93,13 @@ class DataHandler {
         try {
             const user = this.getCurrentUser();
             if (!user) return false;
-            
+
             if (user.balance < amount) {
                 return false;
             }
-            
+
             user.balance -= amount;
-            
+
             const transaction = {
                 type: 'payment',
                 amount: amount,
@@ -107,15 +107,14 @@ class DataHandler {
                 description: description,
                 balance: user.balance
             };
-            
+
             if (!user.transactions) {
                 user.transactions = [];
             }
             user.transactions.push(transaction);
-            
+
             this.setCurrentUser(user);
             return true;
-            
         } catch (error) {
             console.error('Error en pago de servicio:', error);
             return false;
@@ -129,6 +128,18 @@ class DataHandler {
         } catch (error) {
             console.error('Error obteniendo balance:', error);
             return 0;
+        }
+    }
+
+    static getTransaction(id) {
+        try {
+            const user = this.getCurrentUser();
+            if (!user || !user.transactions) return null;
+
+            return user.transactions.find(t => t.id === id);
+        } catch (error) {
+            console.error('Error obteniendo transacción:', error);
+            return null;
         }
     }
 }
