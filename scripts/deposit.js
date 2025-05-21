@@ -26,9 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const success = DataHandler.deposit(amount, description);
+        const depositId = DataHandler.deposit(amount, description);
         
-        if (success) {
+        if (depositId) {
             const container = document.querySelector('.deposit-container');
             container.classList.add('success-state');
             
@@ -43,6 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <strong>$${amount.toLocaleString()}</strong> depositados correctamente
                 </p>
                 ${description ? '<p class="text-muted"><strong>Concepto:</strong> ' + description + '</p>' : ''}
+                <button onclick="PdfUtils.generateTransactionPdf('${depositId}')" class="btn btn-enter" style="margin-top: 1.5rem; width: auto; padding: 0.75rem 1.5rem;">
+                    <i class="bi bi-receipt"></i> Descargar comprobante
+                </button>
                 <button onclick="window.location.href=\'dashboard.html\'" class="btn btn-enter" style="margin-top: 1.5rem; width: auto; padding: 0.75rem 1.5rem;">
                     <i class="bi bi-arrow-left"></i> Volver al Dashboard
                 </button>
