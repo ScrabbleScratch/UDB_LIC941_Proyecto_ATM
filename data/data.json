@@ -16,9 +16,9 @@
     "lastName": "Pérez",
     "balance": 965,
     "transactions": [
-      { "type": "deposit", "description": "Depósito inicial", "amount": 1500, "balance": 1000, "date": "2025-04-01T10:00:00" },
-      { "type": "withdrawal", "description": "Retiro", "amount": 500, "balance": 1000, "date": "2025-04-03T14:30:00" },
-      { "type": "payment", "description": "Pago de internet", "amount": 35, "balance": 965, "date": "2025-04-04T16:15:00" }
+      { "id": "4ce5f543-9f22-4f97-8e26-1f48541a29a7", "type": "deposit", "description": "Depósito inicial", "amount": 1500, "balance": 1000, "date": "2025-04-01T10:00:00" },
+      { "id": "0d34f914-62fd-4c79-8af7-920a08b7f10d", "type": "withdrawal", "description": "Retiro", "amount": 500, "balance": 1000, "date": "2025-04-03T14:30:00" },
+      { "id": "ebe31616-b13e-411a-8c8e-20948ae91812", "type": "payment", "description": "Pago de internet", "amount": 35, "balance": 965, "date": "2025-04-04T16:15:00" }
     ]
   },
   {
@@ -29,9 +29,9 @@
     "lastName": "Gómez",
     "balance": 1425,
     "transactions": [
-      { "type": "deposit", "description": "Depósito inicial", "amount": 2500, "balance": 2500, "date": "2025-04-02T09:45:00" },
-      { "type": "withdrawal", "description": "Retiro", "amount": 1000, "balance": 1500, "date": "2025-04-05T11:00:00" },
-      { "type": "payment", "description": "Pago de electricidad", "amount": 75, "balance": 1425, "date": "2025-04-06T12:30:00" }
+      { "id": "34db6690-7b55-4dd6-b075-ab8e419b434b", "type": "deposit", "description": "Depósito inicial", "amount": 2500, "balance": 2500, "date": "2025-04-02T09:45:00" },
+      { "id": "87c90056-1986-4a3c-8f0a-f020c5dc8e5e", "type": "withdrawal", "description": "Retiro", "amount": 1000, "balance": 1500, "date": "2025-04-05T11:00:00" },
+      { "id": "0e1aa8da-f66c-41a4-b111-933e5d911a00", "type": "payment", "description": "Pago de electricidad", "amount": 75, "balance": 1425, "date": "2025-04-06T12:30:00" }
     ]
   }
 ]
