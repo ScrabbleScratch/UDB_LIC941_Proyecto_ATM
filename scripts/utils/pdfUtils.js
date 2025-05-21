@@ -23,13 +23,13 @@ class PdfUtils {
     doc.text(`Generado el: ${new Date().toLocaleDateString()}`, 105, 25, { align: 'center' });
 
     // Capturar gráfico
-    const chartCanvas = document.getElementById('transactionsChart');
-    const chartImg = await html2canvas(chartCanvas, {
-      scale: 2,
-      logging: false,
-      useCORS: true
-    });
-    doc.addImage(chartImg, 'PNG', 15, 35, 180, 100);
+    // const chartCanvas = document.getElementById('transactionsChart');
+    // const chartImg = await html2canvas(chartCanvas, {
+    //   scale: 2,
+    //   logging: false,
+    //   useCORS: true
+    // });
+    // doc.addImage(chartImg, 'PNG', 15, 35, 130, 100);
 
     // Capturar tabla en partes
     const tableElement = document.querySelector('.transactions-table');
@@ -38,9 +38,9 @@ class PdfUtils {
     tableClone.style.fontSize = '10pt';
 
     // Dividir tabla si es muy larga
-    const rowsPerPage = 15;
+    const rowsPerPage = 28;
     const rows = tableClone.rows;
-    let currentPosition = 150;
+    let currentPosition = 35;
 
     for (let i = 0; i < rows.length; i += rowsPerPage) {
       if (i > 0) {
