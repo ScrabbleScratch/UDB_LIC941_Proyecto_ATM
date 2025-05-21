@@ -5,20 +5,22 @@
     "accountNumber": "123456789",
     "firstName": "Carlos",
     "lastName": "Sánchez",
-    "balance": 0,
-    "transactions": []
+    "balance": 965,
+    "transactions": [
+      { "id": "4ce5f543-9f22-4f97-8e26-1f48541a29a7", "type": "deposit", "description": "Depósito inicial", "amount": 1500, "balance": 1500, "date": "2025-04-01T10:00:00" },
+      { "id": "0d34f914-62fd-4c79-8af7-920a08b7f10d", "type": "withdrawal", "description": "Retiro", "amount": 500, "balance": 1000, "date": "2025-04-03T14:30:00" },
+      { "id": "ebe31616-b13e-411a-8c8e-20948ae91812", "type": "payment", "description": "Pago de internet", "amount": 35, "balance": 965, "date": "2025-04-04T16:15:00" }
+    ]
   },
   {
     "id": 2,
     "pin": "1234",
-    "accountNumber": "987654321",
-    "firstName": "Juan",
-    "lastName": "Pérez",
-    "balance": 965,
+    "accountNumber": "0987654321",
+    "firstName": "Ash",
+    "lastName": "Ketchum",
+    "balance": 500,
     "transactions": [
-      { "id": "4ce5f543-9f22-4f97-8e26-1f48541a29a7", "type": "deposit", "description": "Depósito inicial", "amount": 1500, "balance": 1000, "date": "2025-04-01T10:00:00" },
-      { "id": "0d34f914-62fd-4c79-8af7-920a08b7f10d", "type": "withdrawal", "description": "Retiro", "amount": 500, "balance": 1000, "date": "2025-04-03T14:30:00" },
-      { "id": "ebe31616-b13e-411a-8c8e-20948ae91812", "type": "payment", "description": "Pago de internet", "amount": 35, "balance": 965, "date": "2025-04-04T16:15:00" }
+      { "id": "4ce5f543-9f22-4f97-8e26-1f48541a29a7", "type": "deposit", "description": "Depósito inicial", "amount": 500, "balance": 500, "date": "2025-04-01T10:00:00" }
     ]
   },
   {
